@@ -1,11 +1,11 @@
-#devops-sample repository
+# devops-sample repository
 
 
-###Summary:
+### Summary:
 This is a realistic sample of what you'll regularly deal with in the Marketing Web Automation role.  We need several containers created in order to enable this repository to run in a local environment.
 
 
-###Rules:
+### Rules:
 - Get as far as you can in 30 minutes.
 - Your solution must run on a local machine.
 - Please use any and all resources available to you (AI, Google, Stack Overflow, phone a friend, etc.)
@@ -14,7 +14,7 @@ This is a realistic sample of what you'll regularly deal with in the Marketing W
 - You are not expected to complete all of this in 30 minutes.  We're more interested in seeing your approach and how far you get in that time.
 
 
-###Goals:
+### Goals:
 - When the application container(s) are running, we are able to visit localhost:3000 and see a simple web page with the following messages:
 ```
 Service Status
@@ -25,7 +25,7 @@ Has the second command been run: Yes
 EXTRA CREDIT: Redis Connection: Redis Status: Connected
 ```
 
-###Details:
+### Details:
 We have a repository (this one), with a simple Node.js application that we need to serve up to the browser.  The CLI command to run the application is: `'npm run dev'` OR `command: ["npm", "run", "dev"]`
 For the Node.js image, you may use a custom Dockerfile or an existing image.  The version of Node.js required is 18.
 The Node.js container will need to run `npm install` during the build process or when it is first stood up.
@@ -40,7 +40,7 @@ There are two bash files that need to be run as commands:
 `commandTwo.sh` - should be run at the user's descretion either via passing a variable or flag to docker compose, or via a new variable in the .env file.  It will create an empty file in the root of the app container named `second_command_complete`.
 
 
-###EXTRA CREDIT:
+### EXTRA CREDIT:
 Add a redis container.  The redis docker image should be: `redis:6.0.9`
 
 ---
