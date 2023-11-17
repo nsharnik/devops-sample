@@ -17,8 +17,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
+CREATE DATABASE IF NOT EXISTS testdb;
 
-CREATE TABLE `test_db_commands` (
+USE testdb;
+
+CREATE TABLE IF NOT EXISTS `test_db_commands` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `testdb_users_name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -26,7 +29,6 @@ CREATE TABLE `test_db_commands` (
 
 INSERT INTO `test_db_commands` (`id`, `testdb_users_name`) VALUES
 (1, 'command_one');
-
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

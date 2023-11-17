@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+  sample:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sample
+    depends_on:
+      - redis
+      - mariadb
+    environment:
+      DB_HOST: mariadb
+      DB_USER: root
+      DB_PASS: example
+      DB_NAME: testdb
+      DB_PORT: 3306
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    logging:
+      driver: "json-file"
+    ports:
+      - 80:3000
+
+
+  redis:
+    image: redis:6.0.9
+    container_name: redis
+    restart: on-failure
+    logging:
+      driver: "json-file"
+    ports:
+      - 6379:6379
+
+  mariadb:
+    container_name: mariadb
+    restart: on-failure
+    logging:
+      driver: "json-file"
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: maria
+      MYSQL_PASSWORD: example
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
